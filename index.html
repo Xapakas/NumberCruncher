@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Number Cruncher</title>
+  </head>
+  <body>
+    <p><b>Mean</b>: 19.95</p>
+    <p><b>Mode(s)</b>: 2, 6, and 43. (<i>Trimodal</i>)</p>
+    <p><b>Median</b>: 18.5</p>
+    <hr>
+    <h2>Using the Reduce Method</h2>
+    <p>While these were calculated by hand, for tougher problems we can use the Reduce Method to make things easier. The reduce() operation takes an array and passes each element of it through whatever function is inside the parentheses. For example, our array:</p>
+    <p>2,2,4,6,6,7,8,11,12,18,19,20,23,24,29,31,41,43,43,50</p>
+    <p>can be saved as "var array" on JavaScript. We can then take that array and use the reduce() operation to find its sum. The button below me will run the line of code</p>
+    <p>document.getElementById("here").innerHTML = array.reduce(getSum)</p>
+    <p>in which "here" is the ID of the line that comes after it. In this, getSum is our function that takes each number of the array and adds it until we get our final total.</p>
+    <p>Push the button!</p>
+    <button onclick = "myFunction()">Here</button>
+    <p><span id="here"></span></p>
+    <p>Great! You've just found the sum of all the numbers in our array. Because there are 20 elements in our array, the final calculation is fairly simple.</p>
+    <p>399 / 20 = 19.95</p>
+    <p>Giving us our mean!</p>
+    <script>
+
+      var array = [2,2,4,6,6,7,8,11,12,18,19,20,23,24,29,31,41,43,43,50];
+
+      function getSum(total, num) {
+        return total + num;
+      }
+
+      function myFunction(item) {
+        document.getElementById("here").innerHTML = array.reduce(getSum);
+      }
+    </script>
+  </body>
+</html>
